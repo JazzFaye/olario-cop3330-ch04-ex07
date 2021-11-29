@@ -21,7 +21,7 @@ int convert(string s){
 int main(){
     cout << "Please enter two single digit (number/spelled out) values separated by an operator.\n";
     cout << "Note: Please make sure to seperate each input with spaces.\nExample: 2 + two\n";
-
+    //Declaration of variables
     string word1, word2;
     char operation;
 
@@ -32,13 +32,16 @@ int main(){
         int num2 = convert(word2);
         double result;
         
-        if(num1 >= 10 || num2 >= 10 || num1 <= -1 || num2 <= 0){
+        //If condition if user types a 2 digit number or a number that is less than 0
+        if(num1 >= 10 || num2 >= 10 || num1 <= -1 || num2 <= -1){
             cout << "Error: Must be positive and a single digit (number/spelled out) values only.";
         }else{
+        //Switch condition if the user types in the following operation
             switch (operation) {
         case '+':
             result = num1 + num2;
-            cout << "The Sum of " << num1 << " and " << num2 << " is " << result;
+            //Prints the number the user typed as well as the result
+            cout << "The Sum of " << num1 << " and " << num2 << " is " << result; 
             break;
         case '-':
             oper = "Difference between ";
@@ -59,7 +62,8 @@ int main(){
             }
             break;
         default:
-                cout << "Error: Please enter a valid operator.";
+                //Shows the error if the user types anything else that is not included in the condition above
+                cout << "Error: Please enter a valid operator."; 
         }
        
     }
